@@ -1,12 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './Screen.css'
 import response from '../Response'
 
 const Screen = ({inputCity,setInputCity,requestData,setRequestData}) => {
-    
-    let img_name = `../pictures/${requestData?.weather[0].icon}.svg`
-    console.log(img_name)
-  return (
+    useEffect(() => {
+        const fetchData = async () => {
+            setRequestData(await response("Tamil Nadu"));
+            console.log(requestData);
+        };
+        fetchData();
+    }, []);
+    console.log(requestData);
+    return (
     <div className='Screen'>
         <form onSubmit={(event)=>{event.preventDefault()}}>
             <input 
@@ -24,29 +29,30 @@ const Screen = ({inputCity,setInputCity,requestData,setRequestData}) => {
             > 
             </button>
         </form>
-        <div className='Display'>
-            <div className='row1'>
-                <div className='col1'>
-                <img
-                    src={
-                    requestData
-                        ? require(`./pictures/${requestData.weather[0].icon}.svg`)
-                        : require('./pictures/01d.svg')
-                    }
-                    alt='sun'
-                    
-                /> 
-                </div>
-                <div className='col2'>
-                    <div className='cname'>
+        {
+            (requestData?.cod == 404)?
 
-                    </div>
-                    <div className='degree'>
-
-                    </div>
+            <div className='Display'>
+                <div className='row1'>
+                    <h1>{requestData?.message}</h1>
                 </div>
             </div>
-        </div>
+
+            :
+            
+            <div className='Display'>
+                <div className='row1'>
+                    <h1>{requestData?.name}  {Math.floor(requestData?.main.temp)}&deg;F </h1>
+                    <h1>Description : {requestData?.weather[0].description}</h1>
+                </div>
+                <div className='row2'>
+                    <h2>Wind Speed : {requestData?.wind.speed} km/h</h2>
+                </div>
+            </div>
+            
+        }
+
+        
     </div>
   )
 }

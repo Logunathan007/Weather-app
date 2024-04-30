@@ -44,27 +44,29 @@
 .Display{
     width: 70%;
     height:60%;
-    background-color: blue;
 }
 
 .row1{
     width: 100%;
     height: 50%;
-    background-color: red;
-    display: flex;
-    flex: 2;
-    justify-content: space-around;
+    text-align: center;
+    box-sizing: border-box;
+}
+.row2{
+    width: 100%;
+    height: 50%;
+    text-align: center;
+    box-sizing: border-box;
+}
+h1{
+    color: white;
+    box-sizing: border-box;
 }
 
-.col1{
-    flex: 1;
-    height: 100%;
-    background-color: aqua;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+h2{
+    color: white;
+    box-sizing: border-box;
 }
-
 .col2{
     flex: 1;
     height: 100%;
@@ -89,3 +91,5 @@
         font-size: 15px;
     }
 }
+
+ 
