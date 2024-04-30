@@ -1,0 +1,49 @@
+.Screen{
+    width: 70%;
+    height: 80%;
+    background-color: black;
+    opacity: .5;
+    border-radius: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.Screen form{
+    width: 80%;
+    height: 40px;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.input{
+    background-color: white;
+    width: 70%;
+    height: 100%;
+    box-sizing: border-box;
+    padding-left: 20px;
+    font-size: 20px;
+}
+
+.sbtn{
+    width: 40px;
+    height: 40px;
+    margin-left: 20px;
+    background-image: url("../searchicon.png");
+    box-sizing: border-box;
+    background-position: center;
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-color: inherit;
+    border: none;
+}
+
+@media (max-width : 350px) {
+    .Screen{
+        width: 100%;
+    }
+    .input{
+        padding-left: 10px;
+        font-size: 15px;
+    }
+}
