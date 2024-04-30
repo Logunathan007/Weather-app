@@ -2,10 +2,16 @@ import React from 'react'
 import './Box.css'
 import Screen from '../ScreenComp/Screen'
 
-const Box = () => {
+const Box = ({inputCity,setInputCity,requestData,setRequestData}) => {
+  
   return (
     <div className='Box'>
-      <Screen />
+      <Screen 
+       inputCity = {inputCity}
+       setInputCity = {setInputCity}
+       requestData = {requestData}
+       setRequestData = {setRequestData}
+      />
     </div>
   )
 }

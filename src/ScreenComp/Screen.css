@@ -5,15 +5,17 @@
     opacity: .5;
     border-radius: 40px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
 .Screen form{
     width: 80%;
     height: 40px;
-    margin-top: 50px;
+    margin:50px 0px;
     display: flex;
     justify-content: center;
+
 }
 
 .input{
@@ -28,6 +30,7 @@
 .sbtn{
     width: 40px;
     height: 40px;
+    cursor: pointer;
     margin-left: 20px;
     background-image: url("../searchicon.png");
     box-sizing: border-box;
@@ -38,10 +41,49 @@
     border: none;
 }
 
+.Display{
+    width: 70%;
+    height:60%;
+    background-color: blue;
+}
+
+.row1{
+    width: 100%;
+    height: 50%;
+    background-color: red;
+    display: flex;
+    flex: 2;
+    justify-content: space-around;
+}
+
+.col1{
+    flex: 1;
+    height: 100%;
+    background-color: aqua;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.col2{
+    flex: 1;
+    height: 100%;
+    background-color: green;
+}
+
+.img{
+    width: 150px;
+    height: 150px;
+    background-color: blueviolet;
+}
+
 @media (max-width : 350px) {
     .Screen{
         width: 100%;
     }
+}
+
+@media (max-width:530px) {
     .input{
         padding-left: 10px;
         font-size: 15px;
